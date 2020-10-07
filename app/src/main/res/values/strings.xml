@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">ColorChangingApp</string>
     <string name="button_text">Click me!</string>
-    <string name="view_text">This worked!</string>
+    <string name="view_text">Insert Color Here</string>
+    <string name="activity_name1">Palette Activity</string>
+    <string name="activity_name2">Canvas Activity</string>
 </resources>

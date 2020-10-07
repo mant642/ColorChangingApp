@@ -9,11 +9,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class PaletteActivity extends AppCompatActivity {
+    public static final String EXTRA_MESSAGE = "edu.temple.colorchangingapp.MESSAGE";
     GridView gridView;
     ArrayList<String> colorList;
 
@@ -22,6 +24,8 @@ public class PaletteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        setTitle(getString(R.string.activity_name1));
 
         colorList = new ArrayList<>();
         colorList.add("white");
@@ -42,10 +46,14 @@ public class PaletteActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                showSelection(parent.getItemAtPosition(position).toString());
+                /*
                 Context context = getApplicationContext();
                 String selection = parent.getItemAtPosition(position).toString();
                 int duration = Toast.LENGTH_SHORT;
                 Toast.makeText(context, selection, duration).show();
+                 */
+
             }
         });
 
@@ -69,4 +77,10 @@ public class PaletteActivity extends AppCompatActivity {
         startActivity(intent);
     }
      */
+
+    public void showSelection(String selection) {
+        Intent intent = new Intent(this, CanvasActivity.class);
+        intent.putExtra(EXTRA_MESSAGE, selection);
+        startActivity(intent);
+    }
 }
