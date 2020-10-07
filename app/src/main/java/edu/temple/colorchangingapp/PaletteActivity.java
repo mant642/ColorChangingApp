@@ -67,7 +67,6 @@ public class PaletteActivity extends AppCompatActivity {
         });
          */
 
-
     }
 
     // Launching an activity with an intent wasn't working previously because it needed to happen in a method, I guess?

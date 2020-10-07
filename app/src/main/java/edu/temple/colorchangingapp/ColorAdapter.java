@@ -10,8 +10,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class ColorAdapter extends BaseAdapter {
-    Context context;
-    ArrayList<String> colors;
+    final Context context;
+    final ArrayList<String> colors;
 
     public ColorAdapter (Context context, ArrayList<String> colors) {
         this.context = context;
@@ -36,14 +36,19 @@ public class ColorAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         TextView textView;
+        // Perhaps this never runs in this case ... holdover from spinner after all, which has different properties ...
         if (convertView == null) {
             textView = new TextView(context);
+            // textView.setPadding(0,5,0,5);
         } else {
             textView = (TextView) convertView;
         }
 
         textView.setText(getItem(position).toString());
         textView.setBackgroundColor(Color.parseColor(getItem(position).toString()));
+        // Original: 0,5,0,5
+        // 20's good
+        textView.setPadding(40,40,40,40);
 
         return textView;
     }
