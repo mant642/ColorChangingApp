@@ -5,4 +5,15 @@
     <string name="activity_name1">Palette Activity</string>
     <string name="activity_name2">Canvas Activity</string>
     <string name="info_message">Click a color below to launch the Canvas</string>
+    <string-array name="color_list">
+        <item>white</item>
+        <item>blue</item>
+        <item>cyan</item>
+        <item>darkgrey</item>
+        <item>grey</item>
+        <item>green</item>
+        <item>lightgrey</item>
+        <item>magenta</item>
+        <item>red</item>
+    </string-array>
 </resources>

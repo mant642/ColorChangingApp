@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,12 +14,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class PaletteActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "edu.temple.colorchangingapp.MESSAGE";
     GridView gridView;
     ArrayList<String> colorList;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,11 @@ public class PaletteActivity extends AppCompatActivity {
 
         setTitle(getString(R.string.activity_name1));
 
+        colorList = new ArrayList<>();
+        Resources res = getResources();
+        Collections.addAll(colorList, res.getStringArray(R.array.color_list));
+
+        /*
         colorList = new ArrayList<>();
         colorList.add("white");
         colorList.add("blue");
@@ -37,6 +44,7 @@ public class PaletteActivity extends AppCompatActivity {
         colorList.add("lightgrey");
         colorList.add("magenta");
         colorList.add("red");
+         */
 
         gridView = findViewById(R.id.color_grid);
 
