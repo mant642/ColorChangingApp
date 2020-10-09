@@ -9,11 +9,24 @@
     <GridView
         android:id="@+id/color_grid"
         android:layout_width="0dp"
-        android:layout_height="534dp"
+        android:layout_height="0dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="2dp"
         android:layout_marginEnd="1dp"
+        android:layout_marginBottom="99dp"
         android:numColumns="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:layout_marginBottom="38dp"
+        android:text="@string/info_message"
+        app:layout_constraintBottom_toTopOf="@+id/color_grid"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

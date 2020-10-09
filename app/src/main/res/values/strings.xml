@@ -4,4 +4,5 @@
     <string name="view_text">Insert Color Here</string>
     <string name="activity_name1">Palette Activity</string>
     <string name="activity_name2">Canvas Activity</string>
+    <string name="info_message">Click a color below to launch the Canvas</string>
 </resources>
