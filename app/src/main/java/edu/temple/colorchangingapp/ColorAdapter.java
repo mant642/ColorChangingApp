@@ -51,28 +51,28 @@ public class ColorAdapter extends BaseAdapter {
             textView.setBackgroundColor(Color.WHITE);
         }
         if (getItem(position).toString().equals("blue")||getItem(position).toString().equals("bleue")) {
-            textView.setBackgroundColor(Color.WHITE);
+            textView.setBackgroundColor(Color.BLUE);
         }
         if (getItem(position).toString().equals("cyan")||getItem(position).toString().equals("cyan")) {
-            textView.setBackgroundColor(Color.WHITE);
+            textView.setBackgroundColor(Color.CYAN);
         }
         if (getItem(position).toString().equals("darkgrey")||getItem(position).toString().equals("grisfoncé")) {
-            textView.setBackgroundColor(Color.WHITE);
+            textView.setBackgroundColor(Color.DKGRAY);
         }
         if (getItem(position).toString().equals("grey")||getItem(position).toString().equals("grise")) {
-            textView.setBackgroundColor(Color.WHITE);
+            textView.setBackgroundColor(Color.GRAY);
         }
         if (getItem(position).toString().equals("green")||getItem(position).toString().equals("verte")) {
-            textView.setBackgroundColor(Color.WHITE);
+            textView.setBackgroundColor(Color.GREEN);
         }
         if (getItem(position).toString().equals("lightgrey")||getItem(position).toString().equals("grisclair")) {
-            textView.setBackgroundColor(Color.WHITE);
+            textView.setBackgroundColor(Color.LTGRAY);
         }
         if (getItem(position).toString().equals("magenta")||getItem(position).toString().equals("magenta")) {
-            textView.setBackgroundColor(Color.WHITE);
+            textView.setBackgroundColor(Color.MAGENTA);
         }
         if (getItem(position).toString().equals("red")||getItem(position).toString().equals("rouge")) {
-            textView.setBackgroundColor(Color.WHITE);
+            textView.setBackgroundColor(Color.RED);
         }
         // Original: 0,5,0,5
         // 20's good
