@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Application de changement de couleur</string>
+    <string name="button_text">Clique moi!</string>
+    <string name="view_text">Insérer la couleur ici</string>
+    <string name="activity_name1">Activité de la palette</string>
+    <string name="activity_name2">Activité de toile</string>
+    <string name="info_message">Cliquez sur une couleur ci-dessous pour lancer le canevas</string>
+    <string-array name="color_list">
+        <item>blanche</item>
+        <item>bleue</item>
+        <item>cyan</item>
+        <item>grisfoncé</item>
+        <item>grise</item>
+        <item>verte</item>
+        <item>grisclair</item>
+        <item>magenta</item>
+        <item>rouge</item>
+    </string-array>
+</resources>
