@@ -45,7 +45,35 @@ public class ColorAdapter extends BaseAdapter {
         }
 
         textView.setText(getItem(position).toString());
-        textView.setBackgroundColor(Color.parseColor(getItem(position).toString()));
+        // Original, doesn't work with French translation
+        // textView.setBackgroundColor(Color.parseColor(getItem(position).toString()));
+        if (getItem(position).toString().equals("white")||getItem(position).toString().equals("blanche")) {
+            textView.setBackgroundColor(Color.WHITE);
+        }
+        if (getItem(position).toString().equals("blue")||getItem(position).toString().equals("bleue")) {
+            textView.setBackgroundColor(Color.WHITE);
+        }
+        if (getItem(position).toString().equals("cyan")||getItem(position).toString().equals("cyan")) {
+            textView.setBackgroundColor(Color.WHITE);
+        }
+        if (getItem(position).toString().equals("darkgrey")||getItem(position).toString().equals("grisfoncé")) {
+            textView.setBackgroundColor(Color.WHITE);
+        }
+        if (getItem(position).toString().equals("grey")||getItem(position).toString().equals("grise")) {
+            textView.setBackgroundColor(Color.WHITE);
+        }
+        if (getItem(position).toString().equals("green")||getItem(position).toString().equals("verte")) {
+            textView.setBackgroundColor(Color.WHITE);
+        }
+        if (getItem(position).toString().equals("lightgrey")||getItem(position).toString().equals("grisclair")) {
+            textView.setBackgroundColor(Color.WHITE);
+        }
+        if (getItem(position).toString().equals("magenta")||getItem(position).toString().equals("magenta")) {
+            textView.setBackgroundColor(Color.WHITE);
+        }
+        if (getItem(position).toString().equals("red")||getItem(position).toString().equals("rouge")) {
+            textView.setBackgroundColor(Color.WHITE);
+        }
         // Original: 0,5,0,5
         // 20's good
         textView.setPadding(40,40,40,40);
