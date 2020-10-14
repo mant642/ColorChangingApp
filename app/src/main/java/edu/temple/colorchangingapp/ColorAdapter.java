@@ -1,6 +1,7 @@
 package edu.temple.colorchangingapp;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 public class ColorAdapter extends BaseAdapter {
     final Context context;
     final ArrayList<String> colors;
+
 
     public ColorAdapter (Context context, ArrayList<String> colors) {
         this.context = context;
@@ -45,8 +47,12 @@ public class ColorAdapter extends BaseAdapter {
         }
 
         textView.setText(getItem(position).toString());
+        // I might not be able to use hardcoded strings, but I can associate certain positions with color values instead ...
+        // textView.setText(getItem(position).toString() + Integer.toString(position));
         // Original, doesn't work with French translation
         // textView.setBackgroundColor(Color.parseColor(getItem(position).toString()));
+
+        /*
         if (getItem(position).toString().equals("white")||getItem(position).toString().equals("blanche")) {
             textView.setBackgroundColor(Color.WHITE);
         }
@@ -74,6 +80,36 @@ public class ColorAdapter extends BaseAdapter {
         if (getItem(position).toString().equals("red")||getItem(position).toString().equals("rouge")) {
             textView.setBackgroundColor(Color.RED);
         }
+         */
+
+        if (position == 0) {
+            textView.setBackgroundColor(Color.WHITE);
+        }
+        if (position == 1) {
+            textView.setBackgroundColor(Color.BLUE);
+        }
+        if (position == 2) {
+            textView.setBackgroundColor(Color.CYAN);
+        }
+        if (position == 3) {
+            textView.setBackgroundColor(Color.DKGRAY);
+        }
+        if (position == 4) {
+            textView.setBackgroundColor(Color.GRAY);
+        }
+        if (position == 5) {
+            textView.setBackgroundColor(Color.GREEN);
+        }
+        if (position == 6) {
+            textView.setBackgroundColor(Color.LTGRAY);
+        }
+        if (position == 7) {
+            textView.setBackgroundColor(Color.MAGENTA);
+        }
+        if (position == 8) {
+            textView.setBackgroundColor(Color.RED);
+        }
+
         // Original: 0,5,0,5
         // 20's good
         textView.setPadding(40,40,40,40);
