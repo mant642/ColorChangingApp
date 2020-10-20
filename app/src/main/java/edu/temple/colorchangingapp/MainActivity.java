@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class PaletteActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "edu.temple.colorchangingapp.MESSAGE";
     GridView gridView;
     ArrayList<String> colorList;
