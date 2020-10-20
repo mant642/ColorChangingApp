@@ -27,24 +27,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setTitle(getString(R.string.activity_name1));
+        // Guess I don't need this anymore ...
+        // setTitle(getString(R.string.activity_name1));
 
         colorList = new ArrayList<>();
         Resources res = getResources();
         Collections.addAll(colorList, res.getStringArray(R.array.color_list));
-
-        /*
-        colorList = new ArrayList<>();
-        colorList.add("white");
-        colorList.add("blue");
-        colorList.add("cyan");
-        colorList.add("darkgrey");
-        colorList.add("grey");
-        colorList.add("green");
-        colorList.add("lightgrey");
-        colorList.add("magenta");
-        colorList.add("red");
-         */
 
         gridView = findViewById(R.id.color_grid);
 
@@ -55,36 +43,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 showSelection(parent.getItemAtPosition(position).toString());
-                /*
-                Context context = getApplicationContext();
-                String selection = parent.getItemAtPosition(position).toString();
-                int duration = Toast.LENGTH_SHORT;
-                Toast.makeText(context, selection, duration).show();
-                 */
-
             }
         });
-
-        /*
-        Button button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showSecondActivity();
-            }
-        });
-         */
-
     }
 
-    // Launching an activity with an intent wasn't working previously because it needed to happen in a method, I guess?
-    /*
-    public void showSecondActivity () {
-        Intent intent = new Intent(this, CanvasActivity.class);
-        startActivity(intent);
-    }
-     */
-
+    // Launching an activity with an intent seems to require a method
     public void showSelection(String selection) {
         Intent intent = new Intent(this, CanvasActivity.class);
         intent.putExtra(EXTRA_MESSAGE, selection);
