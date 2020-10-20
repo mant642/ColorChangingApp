@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         PaletteFragment f1 = new PaletteFragment();
         CanvasFragment f2 = new CanvasFragment();
         ft.add(R.id.frameLayout, f1);
-        // ft.add(R.id.fragment_canvas, f2);
+        ft.add(R.id.frameLayout2, f2);
         ft.commit(); 
 
         // Originally part of Canvas Activity, should probably to transferred to CanvasFragment
