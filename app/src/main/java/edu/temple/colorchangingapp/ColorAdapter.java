@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import androidx.fragment.app.FragmentActivity;
+
 import java.util.ArrayList;
 
 public class ColorAdapter extends BaseAdapter {
@@ -15,7 +17,7 @@ public class ColorAdapter extends BaseAdapter {
     final ArrayList<String> colors;
 
 
-    public ColorAdapter (Context context, ArrayList<String> colors) {
+    public ColorAdapter (FragmentActivity context, ArrayList<String> colors) {
         this.context = context;
         this.colors = colors;
     }
