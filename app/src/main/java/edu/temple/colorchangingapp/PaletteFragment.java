@@ -16,25 +16,20 @@ import android.widget.GridView;
 import java.util.ArrayList;
 import java.util.Collections;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link PaletteFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class PaletteFragment extends Fragment {
-    ArrayList<String> colorList;
+    // ArrayList<String> colorList;
     GridView gridView;
 
-    /*
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String COLOR_LIST = "colorlist";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
-    private String mParam2;
-     */
+    private ArrayList<String> colorList;
+
 
     public PaletteFragment() {
         // Required empty public constructor
@@ -50,33 +45,30 @@ public class PaletteFragment extends Fragment {
      * @return A new instance of fragment PaletteFragment.
      */
 
-    /*
+
     // TODO: Rename and change types and number of parameters
-    public static PaletteFragment newInstance(String param1, String param2) {
+    public static PaletteFragment newInstance(ArrayList<String> colorList) {
         PaletteFragment fragment = new PaletteFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putStringArrayList(COLOR_LIST, colorList);
         fragment.setArguments(args);
         return fragment;
     }
-     */
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            colorList = getArguments().getStringArrayList(COLOR_LIST);
         }
-         */
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_palette, container, false);
 
         colorList = new ArrayList<>();
