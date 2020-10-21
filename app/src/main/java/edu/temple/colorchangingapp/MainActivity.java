@@ -4,19 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Context;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.GridView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity implements PaletteFragment.PaletteFragmentListener {
@@ -39,8 +30,8 @@ public class MainActivity extends AppCompatActivity implements PaletteFragment.P
         PaletteFragment f1 = PaletteFragment.newInstance(colorList);
         f2 = new CanvasFragment();
 
-        ft.replace(R.id.frameLayout, f1);
-        ft.replace(R.id.frameLayout2, f2);
+        ft.replace(R.id.container_1, f1);
+        ft.replace(R.id.container_2, f2);
         ft.commit(); 
 
         // Originally part of Canvas Activity, should probably to transferred to CanvasFragment
