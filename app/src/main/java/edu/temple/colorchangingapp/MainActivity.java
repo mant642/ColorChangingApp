@@ -21,7 +21,6 @@ import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity implements PaletteFragment.PaletteFragmentListener {
     public static final String EXTRA_MESSAGE = "edu.temple.colorchangingapp.MESSAGE";
-    // GridView gridView;
     ArrayList<String> colorList;
     CanvasFragment f2;
 
@@ -29,9 +28,6 @@ public class MainActivity extends AppCompatActivity implements PaletteFragment.P
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // Guess I don't need this anymore ...
-        // setTitle(getString(R.string.activity_name1));
 
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
@@ -42,8 +38,7 @@ public class MainActivity extends AppCompatActivity implements PaletteFragment.P
 
         PaletteFragment f1 = PaletteFragment.newInstance(colorList);
         f2 = new CanvasFragment();
-        // ft.add(R.id.frameLayout, f1);
-        // ft.add(R.id.frameLayout2, f2);
+
         ft.replace(R.id.frameLayout, f1);
         ft.replace(R.id.frameLayout2, f2);
         ft.commit(); 
@@ -72,14 +67,4 @@ public class MainActivity extends AppCompatActivity implements PaletteFragment.P
     public void onColorSelected(String chosenColor) {
         f2.updateTextView(chosenColor);
     }
-
-    // Launching an activity with an intent seems to require a method
-    // Also, this thing straight up won't work without CanvasActivity, which doesn't exist anymore
-    /*
-    public void showSelection(String selection) {
-        Intent intent = new Intent(this, CanvasActivity.class);
-        intent.putExtra(EXTRA_MESSAGE, selection);
-        startActivity(intent);
-    }
-     */
 }

@@ -47,13 +47,6 @@ public class PaletteFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        /*
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            colorList = getArguments().getStringArrayList(COLOR_LIST);
-        }
-         */
     }
 
     @Override
@@ -76,8 +69,7 @@ public class PaletteFragment extends Fragment {
         // gridView = findViewById(R.id.color_grid);
 
         // gridView.setAdapter(new ColorAdapter(getActivity(), colorList));
-        // "this" is seemingly unchanged, but actually context has changed from "MainActivity" to "PaletteActivity"
-        // Also, that doesn't work
+
         ColorAdapter colorAdapter = new ColorAdapter(getActivity(), colorList);
         // ColorAdapter colorAdapter = new ColorAdapter(context, colorList);
         gridView.setAdapter(colorAdapter);
