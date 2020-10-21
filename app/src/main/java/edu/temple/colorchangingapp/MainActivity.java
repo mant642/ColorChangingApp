@@ -19,10 +19,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements PaletteFragment.PaletteFragmentListener {
     public static final String EXTRA_MESSAGE = "edu.temple.colorchangingapp.MESSAGE";
     // GridView gridView;
-    // ArrayList<String> colorList;
+    ArrayList<String> colorList;
+    CanvasFragment f2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +36,16 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
 
-        PaletteFragment f1 = new PaletteFragment();
-        CanvasFragment f2 = new CanvasFragment();
-        ft.add(R.id.frameLayout, f1);
-        ft.add(R.id.frameLayout2, f2);
+        colorList = new ArrayList<>();
+        Resources res = getResources();
+        Collections.addAll(colorList, res.getStringArray(R.array.color_list));
+
+        PaletteFragment f1 = PaletteFragment.newInstance(colorList);
+        f2 = new CanvasFragment();
+        // ft.add(R.id.frameLayout, f1);
+        // ft.add(R.id.frameLayout2, f2);
+        ft.replace(R.id.frameLayout, f1);
+        ft.replace(R.id.frameLayout2, f2);
         ft.commit(); 
 
         // Originally part of Canvas Activity, should probably to transferred to CanvasFragment
@@ -59,6 +66,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
          */
+    }
+
+    @Override
+    public void onColorSelected(String chosenColor) {
+        f2.updateTextView(chosenColor);
     }
 
     // Launching an activity with an intent seems to require a method

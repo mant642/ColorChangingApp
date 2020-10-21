@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class CanvasFragment extends Fragment {
+    TextView textView;
 
     public CanvasFragment() {
         // Required empty public constructor
@@ -25,8 +26,11 @@ public class CanvasFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_canvas, container, false);
-        TextView textView = v.findViewById(R.id.display_name);
-        textView.setText("Two fragments at once!");
+        textView = v.findViewById(R.id.display_name);
         return v;
+    }
+
+    public void updateTextView (String selection) {
+        textView.setText(selection);
     }
 }
